@@ -1,0 +1,98 @@
+*,
+*::before, 
+*::after{
+	transition: 400ms all ease-in-out 50ms;
+	backface-visibility: hidden;
+	box-sizing: border-box;
+}
+
+body{
+	background: #2e394d;
+}
+
+.wrapper{
+	position: absolute;
+	top:20%;
+	left:50%;
+	transform: translate(-50%, 50%);
+}
+
+div{
+	position: relative;
+	width:200px;
+	height:100px;
+	background-color: #af4c4c;
+	box-shadow: 0 0 2px #af4c4c;
+}
+
+label{
+	position:absolute;
+	width:80px;
+	height:80px;
+	cursor: pointer;
+	background:#ffffff;
+	left:10px;
+	top:10px;
+}
+
+div,
+label{
+	border-radius: 50px;
+}
+
+label:before{
+	position: absolute;
+	content: "";
+	top:calc(50% - 30px);
+	left:calc(50% - 2.5px);
+	width:5px;
+	height:60px;
+	transform: rotate(45deg);
+}
+
+label:after{
+	position: absolute;
+	transform:rotate(45deg);
+	content: "";
+	left:calc(50% - 30px);
+	top:calc(50% - 2.5px);
+	width:60px;
+	height:5px;
+}
+
+label::before, 
+label::after{
+	border-radius: 5px;
+	background-color: #af4c4c;/*Red Color*/
+}
+
+input[type="checkbox"]{
+	display: none;
+}
+
+input[type="checkbox"]:checked ~ div{
+	background-color: #4caf50; /*Green Color*/
+	box-shadow: 0 0 2px #4caf50;
+}
+
+input[type="checkbox"]:checked ~ div label{
+	left:110px;
+	transform:rotate(360deg);
+}
+
+input[type="checkbox"]:checked ~ div label::before{
+	background:#4caf50;	
+	height:50px;
+	top:calc(55% - 25px);
+	left:calc(60% - 2.5px);
+}
+
+input[type="checkbox"]:checked ~ div label::after{
+	background:#4caf50;	
+	width:20px;
+	top:calc(95% - 25px);
+	left:calc(22.5% - 2.5px);
+}
+
+
+/*CSS  is done!*/
